@@ -16,11 +16,29 @@
          <input type = "file" name = "img" required /> 
          <input type = "submit"/> 
     </form> 
+	<div class="content">
 	{% if img %}
 		<h1>Rendered Image</h1>
 		<img src="{{img}}">
 	{% else %}
-		<h1>Image will be render here...</h1>
+		<h1>Image will be rendered here...</h1>
 	{% endif %}
+	<table>
+		<thead>
+			<th> Color </th>
+			<th> RGB </th>
+			<th> Hex </th>
+		</thead>
+		<tbody>
+		{% for color in render_colors %}
+			<tr>
+			<td style="background-color: {{color.hex}};"> </td>
+			<td>{{ color.rgb }}</td>
+			<td> {{ color.hex }} </td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	</div>
 </body> 
 </html>

@@ -22,7 +22,8 @@
         } 
   
         form{ 
-            background-color: skyblue; 
+            background-color: #cfe1e4; 
+			border-radius: 12px; 
         } 
   
         input{ 
@@ -44,3 +45,10 @@
             color: white; 
             border-radius: 4px; 
         } 
+		
+		.content {
+			margin: auto; 
+            width: 70%; 
+            font-family: Helvetica; 
+            padding: 1.1rem 1.2rem; 	
+		}
