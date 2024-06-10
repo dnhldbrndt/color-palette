@@ -13,7 +13,7 @@ app.config['UPLOAD'] = upload_folder
 print("Ready.")
 
 # Get color palette
-def get_colors (filename):
+def get_colors (filename, min_distance=15):
     color_list = []
     color_dict = {}
     
@@ -31,7 +31,17 @@ def get_colors (filename):
                 color_dict[t_rgb] += 1
     # print(color_dict)
     sorted_colors = dict(sorted(color_dict.items(), key=lambda x: x[1], reverse=True))
-    color_list = list(sorted_colors.keys())
+    sorted_colors = list(sorted_colors.keys())
+    
+    
+    for color in sorted_colors:
+        if not color_list:
+            color_list.append(color)
+        else:
+            if all(color_distance(color, existing_color) >= min_distance for existing_color in color_list):
+                color_list.append(color)
+            if len(color_list) >= 10:
+                break
     color_list = color_list[0:10]
     print(color_list)
     return color_list
@@ -39,6 +49,10 @@ def get_colors (filename):
 # Convert RGB to Hex
 def rgb_to_hex(rgb):
     return '#%02x%02x%02x' % rgb
+    
+# Function to calculate Euclidean distance between two RGB colors
+def color_distance(color1, color2):
+    return np.sqrt(np.sum((np.array(color1) - np.array(color2)) ** 2))
 
 # Home Route
 @app.route('/', methods=['GET', 'POST'])
