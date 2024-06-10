@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Color Palette Generator</title> 
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+</head> 
+<body> 
+    <header> 
+        <h1>Generate Color Palettes from Images</h1> 
+        <p> 
+            Returns the ten most common colors in the image.  
+        </p> 
+    </header> 
+    <form action = "/" method = "POST" enctype = "multipart/form-data"> 
+         <input type = "file" name = "img" required /> 
+         <input type = "submit"/> 
+    </form> 
+	{% if img %}
+		<h1>Rendered Image</h1>
+		<img src="{{img}}">
+	{% else %}
+		<h1>Image will be render here...</h1>
+	{% endif %}
+</body> 
+</html>
