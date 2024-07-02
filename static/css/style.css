@@ -1,54 +1,79 @@
-		*{ 
+        * { 
             box-sizing: border-box; 
-            margin: 0%; 
-            padding: 0%; 
+            margin: 0; 
+            padding: 0; 
         } 
-  
-        header, form, main{ 
+
+        header, form, .content { 
             margin: auto; 
             width: 70%; 
             font-family: Helvetica; 
             padding: 1.1rem 1.2rem; 
         } 
-  
-        header > h1{ 
+
+        header > h1 { 
             font-size: 2.5rem; 
             margin-bottom: 20px; 
         } 
-  
-        header > p{ 
+
+        header > p { 
             color: gray; 
             font-size: 1.2rem; 
         } 
-  
-        form{ 
+
+        form { 
             background-color: #cfe1e4; 
-			border-radius: 12px; 
+            border-radius: 12px; 
+            padding: 1rem; 
         } 
-  
-        input{ 
+
+        input { 
             margin: 10px 0; 
         } 
-  
-        input[type='submit'], input[type='file']{ 
+
+        input[type='submit'], input[type='file'] { 
             font-size: 1.2rem; 
         } 
-  
-        input:hover{ 
+
+        input:hover { 
             cursor: pointer; 
         } 
-  
-        input[type='submit']{ 
+
+        input[type='submit'] { 
             padding: 0.5rem 0.8rem; 
             border: 2px solid #003333; 
             background-color: #003333; 
             color: white; 
             border-radius: 4px; 
         } 
-		
-		.content {
-			margin: auto; 
-            width: 70%; 
-            font-family: Helvetica; 
-            padding: 1.1rem 1.2rem; 	
-		}
+
+        .content { 
+            text-align: center;
+        }
+
+        .content img { 
+            width: 50%; 
+            height: auto; 
+            display: block; 
+            margin: 0 auto; 
+        }
+
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 20px;
+        } 
+
+        th, td { 
+            border: 1px solid #ddd; 
+            padding: 8px; 
+            text-align: center; 
+        } 
+
+        th { 
+            background-color: #f2f2f2; 
+        }
+
+        td:first-child { 
+            width: 50px; 
+        }
