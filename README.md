@@ -1,4 +1,4 @@
-![Color Palette Generator](color_palatte.JPG)
+![Color Palette Generator](color_palette.JPG)
 
 # Color Palette Generator
 
